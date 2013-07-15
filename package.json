@@ -1,0 +1,30 @@
+{
+  "name": "connect-tcp",
+  "version": "0.1.0",
+  "description": "TCP version of SenchaLabs's Connect middleware layer for Node.js",
+  "main": "index.js",
+  "directories": {
+    "example": "examples"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "debug": "*"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/moul/connect-tcp.git"
+  },
+  "keywords": [
+    "middleware",
+    "connect",
+    "tcp",
+    "connect-tcp"
+  ],
+  "author": "Manfred Touron <m@42.am>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/moul/connect-tcp/issues"
+  }
+}
