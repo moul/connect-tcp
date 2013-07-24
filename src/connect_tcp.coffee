@@ -9,12 +9,20 @@ debug = require('debug') 'connect-tcp:main'
 createServer = ->
   debug 'createServer'
   app = (socket, next) ->
-    app.handle(socket, next)
+    app.sock_handle socket, next
+    socket.on 'data', (buffer) ->
+      req =
+        buffer: buffer
+        #data:   buffer.toString()
+        socket: socket
+      res =
+        send: (data) -> socket.write data + '\n'
+      app.data_handle req, res, next
   utils.merge app, proto
   utils.merge app, EventEmitter.prototype
-  app.stack = []
-  for arg of arguments
-    app.use arg
+  app.sock_stack = []
+  app.data_stack = []
+  app.use arg for arg of arguments
   return app
 
 exports = module.exports = createServer
