@@ -14,10 +14,6 @@
 
   server.use(connect_tcp.logger());
 
-  server.use(function(connection, next) {
-    return debug('log from anonymous function');
-  });
-
   server.listen(3043, function() {
     return debug("listening on port 3043");
   });

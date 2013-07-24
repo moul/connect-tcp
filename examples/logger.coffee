@@ -14,5 +14,4 @@ connect_tcp.createServer(
 # version 2
 server = connect_tcp.createServer()
 server.use connect_tcp.logger()
-server.use (connection, next) -> debug 'log from anonymous function'
 server.listen 3043, -> debug "listening on port 3043"
