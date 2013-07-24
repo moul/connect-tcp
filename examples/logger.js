@@ -6,7 +6,9 @@
 
   connect_tcp = require('..');
 
-  connect_tcp.createServer(connect_tcp.logger()).listen(3042);
+  connect_tcp.createServer(connect_tcp.logger()).listen(3042, function() {
+    return debug("listening on port 3042");
+  });
 
   server = connect_tcp.createServer();
 
@@ -16,6 +18,8 @@
     return debug('log from anonymous function');
   });
 
-  server.listen(3043);
+  server.listen(3043, function() {
+    return debug("listening on port 3043");
+  });
 
 }).call(this);
