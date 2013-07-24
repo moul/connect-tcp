@@ -4,8 +4,10 @@ utils = require './utils'
 fs = require 'fs'
 path = require 'path'
 basename = path.basename
+debug = require('debug') 'connect-tcp:main'
 
 createServer = ->
+  debug 'createServer'
   app = (socket, next) ->
     app.handle(socket, next)
   utils.merge app, proto
@@ -16,13 +18,9 @@ createServer = ->
   return app
 
 exports = module.exports = createServer
-
 exports.version = '0.1.0'
-
 exports.middleware = {}
-
 exports.utils = utils
-
 createServer.createServer = createServer
 
 fs.readdirSync("#{__dirname}/middleware").forEach (filename) ->
