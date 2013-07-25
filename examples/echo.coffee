@@ -10,11 +10,7 @@ server =         connect_tcp.createServer()
 server.use      connect_tcp.logger()
 server.sock_use connect_tcp.logger.sock_logger()
 
-server.use (req, res, next) ->
-  debug 'converting buffer'
-  req.data = req.buffer.toString()
-  req.data = req.data.replace /^\s+|\s+$/g, ""
-  do next
+server.use connect_tcp.bufferParser()
 
 server.use (req, res, next) ->
   debug 'uppercasing data'

@@ -12,12 +12,7 @@
 
   server.sock_use(connect_tcp.logger.sock_logger());
 
-  server.use(function(req, res, next) {
-    debug('converting buffer');
-    req.data = req.buffer.toString();
-    req.data = req.data.replace(/^\s+|\s+$/g, "");
-    return next();
-  });
+  server.use(connect_tcp.bufferParser());
 
   server.use(function(req, res, next) {
     debug('uppercasing data');
