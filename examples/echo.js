@@ -26,9 +26,9 @@
   });
 
   server.use(function(req, res, next) {
-    var correspondances, exp, translation;
+    var exp, translation, translations;
     debug('1337ing data');
-    correspondances = {
+    translations = {
       0: /[oO]/,
       1: /[lL]/,
       2: /[zZ]/,
@@ -39,8 +39,8 @@
       7: /[tT]/,
       8: /[bB]/
     };
-    for (translation in correspondances) {
-      exp = correspondances[translation];
+    for (translation in translations) {
+      exp = translations[translation];
       req.data = req.data.replace(exp, translation.toString());
     }
     return next();

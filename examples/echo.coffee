@@ -23,7 +23,7 @@ server.use (req, res, next) ->
 
 server.use (req, res, next) ->
   debug '1337ing data'
-  correspondances =
+  translations =
     0: /[oO]/
     1: /[lL]/
     2: /[zZ]/
@@ -33,7 +33,7 @@ server.use (req, res, next) ->
     6: /[gG]/
     7: /[tT]/
     8: /[bB]/
-  for translation, exp of correspondances
+  for translation, exp of translations
     req.data = req.data.replace exp, translation.toString()
   do next
 
