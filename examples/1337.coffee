@@ -1,9 +1,9 @@
 #!/usr/bin/env coffee
 #
-# DEBUG='*' coffee ./echo.coffee
+# DEBUG='*' coffee ./1337.coffee
 # nc localhost 3044
 
-debug = require('debug') 'connect-tcp:examples:echo'
+debug = require('debug') 'connect-tcp:examples:1337'
 connect_tcp = require '..'
 
 server =         connect_tcp.createServer()

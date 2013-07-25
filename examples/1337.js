@@ -2,7 +2,7 @@
 (function() {
   var connect_tcp, debug, server;
 
-  debug = require('debug')('connect-tcp:examples:echo');
+  debug = require('debug')('connect-tcp:examples:1337');
 
   connect_tcp = require('..');
 
