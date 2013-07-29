@@ -10,11 +10,13 @@ createServer = ->
   debug 'createServer'
   app = (socket, next) ->
     app.sock_handle socket, next
+    socket.session ?= {}
     socket.on 'data', (buffer) ->
       req =
         buffer: buffer
         #data:   buffer.toString()
         socket: socket
+        session: socket.session
       res =
         send: (data) -> socket.write data + '\n'
       app.data_handle req, res, next
