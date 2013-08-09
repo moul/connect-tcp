@@ -19,6 +19,7 @@ createServer = ->
         session: socket.session
       res =
         send: (data) -> socket.write data + '\n'
+        write: (data) -> socket.write data
       app.data_handle req, res, next
   utils.merge app, proto
   utils.merge app, EventEmitter.prototype
