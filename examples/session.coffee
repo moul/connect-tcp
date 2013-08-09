@@ -7,8 +7,6 @@ connect_tcp = require '..'
 
 server = connect_tcp.createServer()
 
-server.use connect_tcp.bufferParser()
-
 server.use (req, res) ->
   req.session.line ?= 0
   req.session.line++

@@ -6,8 +6,6 @@
 
   server = connect_tcp.createServer();
 
-  server.use(connect_tcp.bufferParser());
-
   server.use(function(req, res) {
     var _base;
     if ((_base = req.session).line == null) {
