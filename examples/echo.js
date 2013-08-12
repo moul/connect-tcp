@@ -6,12 +6,7 @@
 
   server = connect_tcp.createServer();
 
-  server.use(connect_tcp.bufferParser());
-
-  server.use(function(req, res, next) {
-    res.send(req.data);
-    return next();
-  });
+  server.use(connect_tcp.echo());
 
   server.listen(3045, function() {
     return console.log("listening on port 3045");

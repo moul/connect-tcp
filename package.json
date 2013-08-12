@@ -1,6 +1,6 @@
 {
   "name": "connect-tcp",
-  "version": "0.2.4",
+  "version": "0.2.5",
   "description": "TCP version of SenchaLabs's Connect middleware layer for Node.js",
   "main": "lib/connect_tcp.js",
   "directories": {
